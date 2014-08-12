@@ -1,0 +1,19 @@
+<h1><%= t('helpers.titles.show', model: Resource.model_name.human ) %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('activerecord.attributes.resource.first_name') %>:</strong>
+  <%= @resource.first_name %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.resource.last_name') %>:</strong>
+  <%= @resource.last_name %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.resource.start') %>:</strong>
+  <%= l @resource.start %>
+</p>
+
+<%= link_to t('helpers.links.edit'), edit_resource_path(@resource) %> |
+<%= link_to t('helpers.links.view_all'), resources_path %>

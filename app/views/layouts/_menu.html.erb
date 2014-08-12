@@ -1,0 +1,10 @@
+<%= nav_bar :fixed => :top, :brand => t('title') do %>
+  <% menu_group do %>
+    <%= drop_down t('activerecord.models.resource.other') do %>
+      <%= menu_item t('helpers.titles.index', model: Resource.model_name.human( :count => 2 ) ), resources_path %>
+      <%= menu_item t('helpers.titles.new', model: Resource.model_name.human), new_resource_path %>
+    <% end %>
+    <%= menu_item t('menu.about'), page_path('about') %>
+    <%= menu_item t('menu.contact'), page_path('contact') %>
+   <% end %>
+<% end %>

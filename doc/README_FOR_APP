@@ -1,0 +1,49 @@
+rails new RP (ResourcePlanning)
+
+# Create doc/README_FOR_APP: this file
+# Create doc/translation.yml:
+de:
+  project:
+    one: "Projekt"
+    other: "Projekte"
+  resource:
+    one: "Mitarbeiter"
+    other: "Mitarbeiter"
+  project_phase:
+    one: "Projektphase"
+    other: "Projektphasen"
+  project_member:
+    one: "Projektmitglied"
+    other: "Projektmitglieder"
+  name: "Name"
+  start: "Beginn"
+  end: "Ende"
+  first_name: "Vorname"
+  last_name: "Nachname"
+
+# Add to Gemfile:
+
+# Use as default
+gem 'quiet_assets', :group => :development
+gem 'validates_lengths_from_database'
+
+# Use for rails-i18n-enhanced
+gem 'rails-i18n'
+gem 'rails-i18n-enhanced', :github => 'wuhl/rails-i18n-enhanced'
+
+# Use for bootstrap-enhanced
+gem "therubyracer", :platform => :ruby
+gem 'high_voltage'
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
+gem 'bootstrap-enhanced',  :github => 'wuhl/bootstrap-enhanced'
+
+# Console:
+bundle install
+rails g railsi18nenhanced:install
+rails g bootstrapenhanced:install
+rails g scaffold resource first_name last_name start:date --skip-stylesheets
+rake db:migrate
+rails s
+
+# That's all folks...

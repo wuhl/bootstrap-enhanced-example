@@ -1,0 +1,6 @@
+<h1><%= t('helpers.titles.edit', model: Resource.model_name.human ) %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('helpers.links.show'), @resource %> |
+<%= link_to t('helpers.links.back'), resources_path %>

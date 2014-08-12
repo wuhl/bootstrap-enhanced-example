@@ -1,0 +1,12 @@
+# de.model.resource.yml
+de:
+  activerecord:
+    models:
+      resource:
+        one: "Mitarbeiter"
+        other: "Mitarbeiter"
+    attributes:
+      resource:
+        first_name: "Vorname"
+        last_name: "Nachname"
+        start: "Beginn"
